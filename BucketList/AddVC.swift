@@ -64,19 +64,15 @@ class AddVC: UIViewController{
 }
 
 extension AddVC: UIPickerViewDataSource, UIPickerViewDelegate{
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerView == withPicker ? 1:2
-    }
-    
-  
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerView == withPicker ?"hi?":PlaceType(rawValue: row)?.with()
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return PlaceType.allCases.count
     }
-
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return PlaceType(rawValue: row)?.with()
+    }
 }

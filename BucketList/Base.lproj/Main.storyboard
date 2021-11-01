@@ -83,7 +83,6 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="U8R-Iz-Bge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="88.392857142857139"/>
         </scene>
@@ -159,6 +158,10 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-PF-3fD">
                                 <rect key="frame" x="80" y="381" width="250" height="114"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vMz-kT-csG" id="0FJ-OZ-oun"/>
+                                    <outlet property="delegate" destination="vMz-kT-csG" id="he0-SF-66D"/>
+                                </connections>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqg-vL-BjC">
                                 <rect key="frame" x="111" y="543" width="189" height="34"/>
@@ -187,6 +190,7 @@
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="onAdd:" destination="vMz-kT-csG" eventType="touchUpInside" id="s3d-4k-kcc"/>
+                                    <segue destination="EV2-rP-Gqx" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="yJ2-Kq-3jH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -200,10 +204,10 @@
                         <outlet property="durationStepper" destination="vd1-cp-Ro5" id="PUm-Hc-HYB"/>
                         <outlet property="placeField" destination="73U-HX-NdT" id="tOk-Je-Dyh"/>
                         <outlet property="withPicker" destination="gOf-PF-3fD" id="dO4-iL-ODx"/>
-                        <segue destination="U8R-Iz-Bge" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="fhS-nw-zQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzD-j6-Uhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EV2-rP-Gqx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1962" y="88"/>
         </scene>
