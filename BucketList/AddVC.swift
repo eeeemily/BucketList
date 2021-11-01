@@ -30,6 +30,18 @@ class AddVC: UIViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    func convert(input: Int) -> String{
+        switch input{
+        case 1:
+            return "Friends"
+        case 2:
+            return "Family"
+        case 3:
+            return "Significant other"
+        default:
+            return "Yourself"
+        }
+    }
     
     func savePlace(name: String, budget: Int16, activity: String) {
         let context = AppDelegate.cdContext
@@ -38,7 +50,7 @@ class AddVC: UIViewController{
             place.setValue(name, forKeyPath: "name")
             place.setValue(budget, forKeyPath: "budget")
             place.setValue(activity, forKeyPath: "activity")
-            place.setValue(withPicker.selectedRow(inComponent: 0), forKeyPath: "with")
+            place.setValue(convert(input: withPicker.selectedRow(inComponent: 0)), forKeyPath: "with")
             place.setValue(Int(durationStepper.value), forKeyPath: "duration")
 //
             do {
