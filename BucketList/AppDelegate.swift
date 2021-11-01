@@ -76,6 +76,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    // MARK: - Conveniences
+    
+    static var persistentContainer: NSPersistentContainer {
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    }
+    
+    static var cdContext: NSManagedObjectContext {
+        let cdContext = persistentContainer.viewContext
+        cdContext.automaticallyMergesChangesFromParent = true
+        return cdContext
+    }
+    
+    // MARK: - Preloading
+    
+    private func preloadSongs() {
+//        let dWasLaunchedBefore = "was_launched_before"
+//        let defaults = UserDefaults.standard
+//        if defaults.bool(forKey: dWasLaunchedBefore) == false {
+//
+//            guard let songsURL = Bundle.main.url(forResource: "Songs", withExtension: "json") else { return }
+//            guard let contents = try? Data(contentsOf: songsURL) else { return }
+////            let library = JSON(contents).arrayValue
+//
+//            persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+//            let backgroundContext = persistentContainer.newBackgroundContext()
+//            backgroundContext.perform {
+//
+//                do {
+//                    for song in library {
+//                        let item = Place(context: backgroundContext)
+//                        item.artist = song["artist"].stringValue
+//                        item.title = song["title"].stringValue
+//                        item.released = song["released"].int16Value
+//                        item.type = 2
+//                    }
+//                    try backgroundContext.save()
+//                    defaults.set(true, forKey: dWasLaunchedBefore)
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+    }
+
 
 }
 
