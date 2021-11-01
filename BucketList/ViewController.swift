@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class TableViewController: UITableViewController {
+class ViewController: UITableViewController {
 
     var places: [NSManagedObject] = []
     
