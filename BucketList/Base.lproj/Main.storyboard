@@ -75,6 +75,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="budgetLabel" destination="WQl-gs-msX" id="e5D-Dy-04n"/>
+                                    <outlet property="durationLabel" destination="q1z-EF-rvC" id="ktS-CI-Ieu"/>
                                     <outlet property="nameLabel" destination="vTc-eX-bV6" id="Lk4-Vv-OmT"/>
                                     <outlet property="placeImageView" destination="AXL-zh-JxB" id="WA4-lf-4OF"/>
                                     <outlet property="withLabel" destination="U09-A2-KOH" id="k37-RG-0in"/>
@@ -231,26 +232,66 @@
         <!--StatVC-->
         <scene sceneID="HlD-pf-0Nc">
             <objects>
-                <viewController id="oxP-6P-bHl" customClass="StatVC" sceneMemberID="viewController">
+                <viewController id="oxP-6P-bHl" customClass="StatVC" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s6H-fs-I5O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJB-Xd-ghS">
-                                <rect key="frame" x="166" y="180" width="40" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJB-Xd-ghS">
+                                <rect key="frame" x="171" y="132" width="73" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Budget Needed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm6-dK-5od">
+                                <rect key="frame" x="31" y="269" width="215" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krR-lq-1dV">
+                                <rect key="frame" x="309" y="269" width="20" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Vacation Days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q27-Pz-aJ3">
+                                <rect key="frame" x="38" y="362" width="200" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-Pz-IZ4">
+                                <rect key="frame" x="305" y="362" width="24" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mvu-Dk-Fbn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mvu-Dk-Fbn" firstAttribute="trailing" secondItem="hbf-Pz-IZ4" secondAttribute="trailing" constant="85" id="0II-Av-J3d"/>
+                            <constraint firstItem="mvu-Dk-Fbn" firstAttribute="trailing" secondItem="krR-lq-1dV" secondAttribute="trailing" constant="97" id="63c-zD-1ji"/>
+                            <constraint firstItem="tJB-Xd-ghS" firstAttribute="leading" secondItem="mvu-Dk-Fbn" secondAttribute="leading" constant="171" id="C69-hV-LXn"/>
+                            <constraint firstItem="mvu-Dk-Fbn" firstAttribute="trailing" secondItem="tJB-Xd-ghS" secondAttribute="trailing" constant="170" id="FZa-FY-ie2"/>
+                            <constraint firstItem="tJB-Xd-ghS" firstAttribute="top" secondItem="mvu-Dk-Fbn" secondAttribute="top" constant="132" id="INP-m2-LOL"/>
+                            <constraint firstItem="Q27-Pz-aJ3" firstAttribute="top" secondItem="lm6-dK-5od" secondAttribute="bottom" constant="65.5" id="Sdp-9B-YEZ"/>
+                            <constraint firstItem="krR-lq-1dV" firstAttribute="top" secondItem="mvu-Dk-Fbn" secondAttribute="top" constant="274" id="Wgi-hQ-JhV"/>
+                            <constraint firstItem="Q27-Pz-aJ3" firstAttribute="leading" secondItem="mvu-Dk-Fbn" secondAttribute="leading" constant="38" id="a5D-2e-bkd"/>
+                            <constraint firstItem="lm6-dK-5od" firstAttribute="top" secondItem="mvu-Dk-Fbn" secondAttribute="top" constant="269" id="fNd-4s-CN8"/>
+                            <constraint firstItem="hbf-Pz-IZ4" firstAttribute="top" secondItem="krR-lq-1dV" secondAttribute="bottom" constant="65" id="g3H-bM-COm"/>
+                            <constraint firstItem="lm6-dK-5od" firstAttribute="leading" secondItem="mvu-Dk-Fbn" secondAttribute="leading" constant="31" id="lp6-fr-Tih"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="budgetLabel" destination="krR-lq-1dV" id="Bdh-ca-dkw"/>
+                        <outlet property="durationLabel" destination="hbf-Pz-IZ4" id="TQ4-Jl-53f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5z-CO-81f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="-563"/>
+            <point key="canvasLocation" x="1076.8115942028987" y="-563.16964285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zdu-ot-9Q7">

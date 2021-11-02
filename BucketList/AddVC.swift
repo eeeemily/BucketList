@@ -32,14 +32,14 @@ class AddVC: UIViewController{
     }
     func convert(input: Int) -> String{
         switch input{
+        case 0:
+            return "with friends"
         case 1:
-            return "Friends"
+            return "with family"
         case 2:
-            return "Family"
-        case 3:
-            return "Significant other"
+            return "with your <3"
         default:
-            return "Yourself"
+            return "by yourself"
         }
     }
     

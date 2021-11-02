@@ -12,6 +12,7 @@ class PlaceCell: UITableViewCell{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var withLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -28,8 +29,8 @@ class PlaceCell: UITableViewCell{
 
             nameLabel?.text = name
             budgetLabel?.text = budget.description
-            withLabel?.text = with.description
-
+            withLabel?.text = with
+            durationLabel?.text = duration.description
 
 //            if let mediaType = MediaType(rawValue: type) {
 //                typeImageView.image = mediaType.image()
