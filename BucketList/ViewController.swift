@@ -12,16 +12,13 @@ class ViewController: UITableViewController, UINavigationControllerDelegate, UII
     //for localization
     var albumImg: UIImage = UIImage(named: "road")!
     let pc = PlaceCell()
-    //    @IBOutlet weak var statButton: UIBarButtonItem!
     @IBOutlet weak var displayImg: UIImageView!
     var places: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("str_stat", comment: ""))
         self.title = NSLocalizedString("string_title", comment: "")
         readData()
-        pc.changeImg(img: albumImg)
 
     }
     
@@ -57,7 +54,6 @@ class ViewController: UITableViewController, UINavigationControllerDelegate, UII
             fatalError("Expected PlaceCell")
         }
         cell.imageView?.image = albumImg
-//        pc.changeImg(img: albumImg)
 
         if let place = places[indexPath.row] as? Place {
             cell.update(with: place)
@@ -118,13 +114,7 @@ class ViewController: UITableViewController, UINavigationControllerDelegate, UII
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage  {
-            print("image changed!!!::")
-            print(image)
-//            pc.placeImageView?.image = image
-            pc.changeImg(img: image)
             albumImg = image
-            readData()
-
             tableView.reloadData()
 
         }
