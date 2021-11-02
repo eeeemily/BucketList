@@ -23,7 +23,7 @@ class StatVC: UIViewController{
         totalBudgetLabel.text=NSLocalizedString("str_total_budget", comment: "")
         totalVacationLabel.text=NSLocalizedString("str_total_days", comment: "")
         budgetLabel.text = NSLocalizedString("str_currency", comment: "")+sumbudget().description
-        durationLabel.text = sumDuration().description+NSLocalizedString("str_day_display", comment: "")
+        durationLabel.text = sumDuration().description
     }
     func sumbudget() -> Double {
        let context = AppDelegate.cdContext

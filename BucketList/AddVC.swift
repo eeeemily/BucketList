@@ -33,6 +33,9 @@ class AddVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         durationStepper?.value = 0
+//        durationStepper.tintColor = UIColor.white
+        durationStepper.backgroundColor = UIColor.white
+
         addingLabel.text=NSLocalizedString("str_adding_destination", comment: "")
         placeLabel.text=NSLocalizedString("str_place", comment: "")
         budgetLabel.text=NSLocalizedString("str_budget", comment: "")
@@ -104,10 +107,23 @@ extension AddVC: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         return PlaceType.allCases.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return PlaceType(rawValue: row)?.with()
-    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return PlaceType(rawValue: row)?.with()
+//    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+            var label = UILabel()
+            if let v = view {
+                label = v as! UILabel
+            }
+            label.font = UIFont (name: "Chalkboard SE Regular", size: 20)
+            label.textColor = UIColor.white
+            label.text =  PlaceType(rawValue: row)?.with()
+            label.textAlignment = .center
+
+            return label
+        }
 }
