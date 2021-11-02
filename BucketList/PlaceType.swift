@@ -13,13 +13,13 @@ enum PlaceType: Int, CaseIterable{
     func with() ->String{
         switch self{
         case .friends:
-            return "Friends"
+            return NSLocalizedString("str_picker_friends", comment: "")
         case .family:
-            return "Family"
+            return NSLocalizedString("str_picker_family", comment: "")
         case .significantOther:
-            return "Significant other"
+            return NSLocalizedString("str_picker_love", comment: "")
         case .yourself:
-            return "Yourself"
+            return NSLocalizedString("str_picker_self", comment: "")
         }
     }
 }

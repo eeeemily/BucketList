@@ -9,22 +9,24 @@ import UIKit
 import CoreData
 
 class ViewController: UITableViewController {
+    //for localization
 
+    //    @IBOutlet weak var statButton: UIBarButtonItem!
     var places: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("str_stat", comment: ""))
+        self.title = NSLocalizedString("string_title", comment: "")
         readData()
     }
     
     func deletionAlert(name: String, completion: @escaping (UIAlertAction) -> Void) {
-        let alertMsg = "Are you sure you want to delete \(name)?"
-        let alert = UIAlertController(title: "Warning", message: alertMsg, preferredStyle: .actionSheet)
+        let alertMsg = NSLocalizedString("are_you_sure_delete", comment: "")+name
+        let alert = UIAlertController(title: NSLocalizedString("str_warning", comment: ""), message: alertMsg, preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: completion)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let deleteAction = UIAlertAction(title: NSLocalizedString("str_delete", comment: ""), style: .destructive, handler: completion)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("str_cancel", comment: ""), style: .cancel)
         
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)

@@ -14,17 +14,32 @@ class AddVC: UIViewController{
     @IBOutlet weak var durationStepper: UIStepper!
     @IBOutlet weak var withPicker: UIPickerView!
     @IBOutlet weak var activityField: UITextField!
-    
+    @IBOutlet weak var daysLabel: UILabel!
+    //for localization
+    @IBOutlet weak var addingLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
-    
+    @IBOutlet weak var withLabel: UILabel!
+    @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var cancelBotton: UIButton!
     var day = 0{
         willSet{
-            durationLabel?.text = newValue.description
+            daysLabel?.text = newValue.description
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        durationStepper?.value = 7
+        durationStepper?.value = 0
+        addingLabel.text=NSLocalizedString("str_adding_destination", comment: "")
+        placeLabel.text=NSLocalizedString("str_place", comment: "")
+        budgetLabel.text=NSLocalizedString("str_budget", comment: "")
+        withLabel.text=NSLocalizedString("str_with", comment: "")
+        durationLabel.text=NSLocalizedString("str_duration", comment: "")
+        activityLabel.text=NSLocalizedString("str_activity", comment: "")
+        addButton.setTitle(NSLocalizedString("str_add", comment: ""), for: .normal)
+        cancelBotton.setTitle(NSLocalizedString("str_cancel", comment: ""), for: .normal)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,13 +48,13 @@ class AddVC: UIViewController{
     func convert(input: Int) -> String{
         switch input{
         case 0:
-            return "with friends"
+            return NSLocalizedString("str_picker_friends", comment: "")
         case 1:
-            return "with family"
+            return NSLocalizedString("str_picker_family", comment: "")
         case 2:
-            return "with your <3"
+            return NSLocalizedString("str_picker_love", comment: "")
         default:
-            return "by yourself"
+            return NSLocalizedString("str_picker_self", comment: "")
         }
     }
     

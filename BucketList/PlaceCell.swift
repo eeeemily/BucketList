@@ -12,7 +12,7 @@ class PlaceCell: UITableViewCell{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var withLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -28,9 +28,9 @@ class PlaceCell: UITableViewCell{
             let duration = place.value(forKey: "duration") as? Int16 {
 
             nameLabel?.text = name
-            budgetLabel?.text = budget.description
-            withLabel?.text = with
-            durationLabel?.text = duration.description
+            budgetLabel?.text = NSLocalizedString("str_currency", comment: "")+budget.description
+            withLabel?.text = with.description
+            daysLabel?.text = duration.description+NSLocalizedString("str_days_display", comment: "")
 
 //            if let mediaType = MediaType(rawValue: type) {
 //                typeImageView.image = mediaType.image()

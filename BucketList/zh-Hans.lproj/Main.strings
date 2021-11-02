@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Trip Duration"; ObjectID = "4U6-bf-Crl"; */
+"4U6-bf-Crl.text" = "Trip Duration";
+
+/* Class = "UILabel"; text = "Total Vacation Days:"; ObjectID = "Q27-Pz-aJ3"; */
+"Q27-Pz-aJ3.text" = "Total Vacation Days:";
+
+/* Class = "UILabel"; text = "Travelling With: "; ObjectID = "Tep-WB-haW"; */
+"Tep-WB-haW.text" = "Travelling With: ";
+
+/* Class = "UILabel"; text = "With"; ObjectID = "U09-A2-KOH"; */
+"U09-A2-KOH.text" = "With";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "U6W-4V-Cio"; */
+"U6W-4V-Cio.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Budget"; ObjectID = "WQl-gs-msX"; */
+"WQl-gs-msX.text" = "Budget";
+
+/* Class = "UILabel"; text = "What do you want to do there?"; ObjectID = "Y4W-0P-YuH"; */
+"Y4W-0P-YuH.text" = "What do you want to do there?";
+
+/* Class = "UILabel"; text = "Add a destination to your Bucket List!"; ObjectID = "eAg-Kx-mEe"; */
+"eAg-Kx-mEe.text" = "Add a destination to your Bucket List!";
+
+/* Class = "UILabel"; text = "15"; ObjectID = "hbf-Pz-IZ4"; */
+"hbf-Pz-IZ4.text" = "15";
+
+/* Class = "UILabel"; text = "$"; ObjectID = "krR-lq-1dV"; */
+"krR-lq-1dV.text" = "$";
+
+/* Class = "UILabel"; text = "Budget: $"; ObjectID = "laR-kE-bTJ"; */
+"laR-kE-bTJ.text" = "Budget: $";
+
+/* Class = "UILabel"; text = "Total Budget Needed:"; ObjectID = "lm6-dK-5od"; */
+"lm6-dK-5od.text" = "Total Budget Needed:";
+
+/* Class = "UILabel"; text = "Days"; ObjectID = "pGU-Sr-bTw"; */
+"pGU-Sr-bTw.text" = "Days";
+
+/* Class = "UILabel"; text = "Days"; ObjectID = "q1z-EF-rvC"; */
+"q1z-EF-rvC.text" = "Days";
+
+/* Class = "UILabel"; text = "Place: "; ObjectID = "qDR-ib-35G"; */
+"qDR-ib-35G.text" = "Place: ";
+
+/* Class = "UILabel"; text = "Stats"; ObjectID = "tJB-Xd-ghS"; */
+"tJB-Xd-ghS.text" = "Stats";
+
+/* Class = "UIBarButtonItem"; title = "str_st"; ObjectID = "tTc-6A-kng"; */
+"tTc-6A-kng.title" = "str_st";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "vTc-eX-bV6"; */
+"vTc-eX-bV6.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "wpg-mv-2zE"; */
+"wpg-mv-2zE.normalTitle" = "Add";

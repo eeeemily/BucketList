@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  BucketList
+
+  Created by Zheng, Minghui on 11/1/21.
+  
+*/
+//"str_stat"="Stat"; /
+
+//main VC: Delete Alert
+"are_you_sure_delete"="Are you sure you want to delete ";
+"str_warning"="Warning";
+"str_delete"="Delete";
+"str_cancel"="Cancel";
+"string_title"="Bucket List";
+
+"str_currency"="$";
+"str_days_display"="Days";
+"str_day_display"="Day";
+
+
+//addVC: UI
+"str_adding_destination"="Add a destination to your Bucket List!";
+"str_place"="Destination: ";
+"str_budget"="Budget: ";
+"str_with"="Travelling with: ";
+"str_duration"="Trip duration: ";
+"str_activity"="What do you want to do there? ";
+"str_add"="Add";
+"str_cancel"="Cancel";
+
+//pickers
+"str_picker_friends"="with friends";
+"str_picker_family"="with family";
+"str_picker_love"="with your lover";
+"str_picker_self"="with yourself";
+
+//StatVC: UI
+"str_stat"="Stats";
+"str_total_budget"="Total Budget Needed: ";
+"str_total_days"="Total Vacation Days:";

@@ -11,11 +11,19 @@ import CoreData
 class StatVC: UIViewController{
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    //for localization
+    @IBOutlet weak var statLabel: UILabel!
+    @IBOutlet weak var totalBudgetLabel: UILabel!
+    @IBOutlet weak var totalVacationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        budgetLabel.text = sumbudget().description
-        durationLabel.text = sumDuration().description
+        //localization NSLocalizedString("string_title", comment: "")
+        statLabel.text=NSLocalizedString("str_stat", comment: "")
+        totalBudgetLabel.text=NSLocalizedString("str_total_budget", comment: "")
+        totalVacationLabel.text=NSLocalizedString("str_total_days", comment: "")
+        budgetLabel.text = NSLocalizedString("str_currency", comment: "")+sumbudget().description
+        durationLabel.text = sumDuration().description+NSLocalizedString("str_day_display", comment: "")
     }
     func sumbudget() -> Double {
        let context = AppDelegate.cdContext

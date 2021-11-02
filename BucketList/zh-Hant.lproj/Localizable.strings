@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  BucketList
+
+  Created by Zheng, Minghui on 11/1/21.
+  
+*/
+//"str_stat"="統計"; kills the connection of present modally?
+
+//main VC: Delete Alert
+"are_you_sure_delete"="你確定你要刪除";
+"str_warning"="警告";
+"str_delete"="刪除";
+"str_cancel"="取消";
+"string_title"="遺願清單";
+"str_currency"="¥";
+"str_days_display"="天";
+"str_day_display"="天";
+
+
+
+//addVC: UI
+"str_adding_destination"="將目的地添加到您的遺願清單";
+"str_place"="目的地";
+"str_budget"="預算";
+"str_with"="一起旅行: ";
+"str_duration"="旅行天數";
+"str_activity"="你想在那裡做什麼？";
+"str_add"="添加";
+"str_cancel"="取消";
+
+//pickers
+"str_picker_friends"="和朋友";
+"str_picker_family"="和家人一起";
+"str_picker_love"="和你的愛人";
+"str_picker_self"="與自己";
+
+
+//StatVC: UI
+"str_stat"="統計數據";
+"str_total_budget"="所需總預算：";
+"str_total_days"="總假期天數：";
