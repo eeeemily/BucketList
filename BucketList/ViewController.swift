@@ -53,7 +53,7 @@ class ViewController: UITableViewController, UINavigationControllerDelegate, UII
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell") as? PlaceCell else {
             fatalError("Expected PlaceCell")
         }
-        cell.imageView?.image = albumImg
+        cell.placeImageView?.image = albumImg
 
         if let place = places[indexPath.row] as? Place {
             cell.update(with: place)

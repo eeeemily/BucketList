@@ -77,11 +77,16 @@ class AddVC: UIViewController{
         }
         
     }
+    
+    
     @IBAction func onDurationChanged(_ sender: UIStepper) {
         day = Int(sender.value)
     }
     @IBAction func onCancel(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true)
+        let alert = UIAlertController(title: NSLocalizedString("str_warning", comment: ""), message: NSLocalizedString("str_are_you_sure_cancel", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("str_ok", comment: ""), style: .default))
+        self.present(alert, animated: true, completion: nil)
+//        presentingViewController?.dismiss(animated: true)
     }
     @IBAction func onAdd(_ sender: Any) {
         if let name = placeField?.text, let budget = Int16((budgetField?.text)!), let activity = activityField?.text{

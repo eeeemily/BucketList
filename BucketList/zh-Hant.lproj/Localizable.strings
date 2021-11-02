@@ -17,7 +17,8 @@
 "str_days_display"="天";
 "str_day_display"="天";
 
-
+"str_are_you_sure_cancel"="你確定你要取消";
+"str_ok"="好的";
 
 //addVC: UI
 "str_adding_destination"="將目的地添加到您的遺願清單";

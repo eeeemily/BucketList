@@ -18,6 +18,8 @@
 "str_days_display"="Days";
 "str_day_display"="Day";
 
+"str_are_you_sure_cancel"="Are you sure you want to cancel";
+"str_ok"="OK";
 
 //addVC: UI
 "str_adding_destination"="Add a destination to your Bucket List!";
