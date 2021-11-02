@@ -24,6 +24,7 @@ class AddVC: UIViewController{
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var cancelBotton: UIButton!
+    
     var day = 0{
         willSet{
             daysLabel?.text = newValue.description
@@ -88,6 +89,8 @@ class AddVC: UIViewController{
         }
         presentingViewController?.dismiss(animated: true)
     }
+    
+    
 }
 
 extension AddVC: UIPickerViewDataSource, UIPickerViewDelegate{

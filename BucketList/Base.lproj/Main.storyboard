@@ -77,7 +77,7 @@
                                     <outlet property="budgetLabel" destination="WQl-gs-msX" id="e5D-Dy-04n"/>
                                     <outlet property="daysLabel" destination="q1z-EF-rvC" id="dDL-8f-ALJ"/>
                                     <outlet property="nameLabel" destination="vTc-eX-bV6" id="Lk4-Vv-OmT"/>
-                                    <outlet property="placeImageView" destination="AXL-zh-JxB" id="WA4-lf-4OF"/>
+                                    <outlet property="placeImageView" destination="AXL-zh-JxB" id="Qrj-2O-8xm"/>
                                     <outlet property="withLabel" destination="U09-A2-KOH" id="k37-RG-0in"/>
                                 </connections>
                             </tableViewCell>
@@ -93,11 +93,18 @@
                                 <segue destination="oxP-6P-bHl" kind="presentation" id="Dgt-07-mrK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qk5-DT-vZO">
-                            <connections>
-                                <segue destination="vMz-kT-csG" kind="presentation" id="yXY-WP-8nY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="qk5-DT-vZO">
+                                <connections>
+                                    <segue destination="vMz-kT-csG" kind="presentation" id="yXY-WP-8nY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="ayh-UC-RY8">
+                                <connections>
+                                    <action selector="onPhotoBtn:" destination="BYZ-38-t0r" id="TpQ-qt-cle"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -222,6 +229,9 @@
                                     <constraint firstAttribute="height" constant="108" id="aJU-zn-hzh"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="photo"/>
+                                <connections>
+                                    <action selector="onGalleryBtn:" destination="vMz-kT-csG" eventType="touchUpInside" id="WuS-HR-euL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Au0-GY-mfh"/>

@@ -13,9 +13,13 @@ class PlaceCell: UITableViewCell{
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var withLabel: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
+    
+//    let vc = ViewController()
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+//        placeImageView?.image = vc.albumImg
+//        print("in PlaceCell")
+//        print(vc.albumImg)
         // Configure the view for the selected state
     }
 
@@ -26,7 +30,7 @@ class PlaceCell: UITableViewCell{
             let budget = place.value(forKey: "budget") as? Int16,
             let activity = place.value(forKey: "activity") as? String,
             let duration = place.value(forKey: "duration") as? Int16 {
-
+            
             nameLabel?.text = name
             budgetLabel?.text = NSLocalizedString("str_currency", comment: "")+budget.description
             withLabel?.text = with.description
@@ -36,5 +40,8 @@ class PlaceCell: UITableViewCell{
 //                typeImageView.image = mediaType.image()
 //            }
         }
+    }
+    func changeImg(img: UIImage){
+        placeImageView?.image = img
     }
 }

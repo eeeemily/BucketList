@@ -1,17 +1,19 @@
 //
 //  ViewController.swift
 //  BucketList
-//
+// ref: https://developer.apple.com/documentation/uikit/views_and_controls/table_views/configuring_the_cells_for_your_table
 //  Created by Zheng, Minghui on 10/31/21.
 
 
 import UIKit
 import CoreData
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     //for localization
-
+    var albumImg: UIImage = UIImage(named: "road")!
+    let pc = PlaceCell()
     //    @IBOutlet weak var statButton: UIBarButtonItem!
+    @IBOutlet weak var displayImg: UIImageView!
     var places: [NSManagedObject] = []
     
     override func viewDidLoad() {
@@ -19,6 +21,8 @@ class ViewController: UITableViewController {
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("str_stat", comment: ""))
         self.title = NSLocalizedString("string_title", comment: "")
         readData()
+        pc.changeImg(img: albumImg)
+
     }
     
     func deletionAlert(name: String, completion: @escaping (UIAlertAction) -> Void) {
@@ -52,7 +56,9 @@ class ViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell") as? PlaceCell else {
             fatalError("Expected PlaceCell")
         }
-        
+        cell.imageView?.image = albumImg
+//        pc.changeImg(img: albumImg)
+
         if let place = places[indexPath.row] as? Place {
             cell.update(with: place)
         }
@@ -95,7 +101,35 @@ class ViewController: UITableViewController {
         }
         readData()
     }
+    // MARK: - Brownie Point
+
+    @IBAction func onPhotoBtn(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
+    }
+    // MARK: - UIImagePickerControllerDelegate
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage  {
+            print("image changed!!!::")
+            print(image)
+//            pc.placeImageView?.image = image
+            pc.changeImg(img: image)
+            albumImg = image
+            readData()
+
+            tableView.reloadData()
+
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
         readData()
